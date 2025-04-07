@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Kocaeli ve İstanbul Koltuk Yıkama</h3>
             <p className="mb-4 text-gray-300">
-              Kocaeli ve İstanbul'un tüm bölgelerinde profesyonel koltuk ve döşeme temizliği hizmetleri. 
+              Kocaeli ve İstanbul&apos;un tüm bölgelerinde profesyonel koltuk ve döşeme temizliği hizmetleri. 
               Ev, ofis, araç ve otel koltuk temizliğinde uzman ekibimizle her zaman yanınızdayız.
             </p>
             <div className="flex space-x-4">

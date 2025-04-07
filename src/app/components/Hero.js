@@ -20,7 +20,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
-            Kocaeli ve İstanbul'un<br/>
+            Kocaeli ve İstanbul&apos;un<br/>
             <span className="text-accent">En İyi Koltuk Yıkama</span> Servisi
           </motion.h1>
           
@@ -30,7 +30,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl mb-8"
           >
-            Kocaeli'nin (Darıca, Gebze, Çayırova, Dilovası, Körfez) ve İstanbul'un (Tuzla, Pendik, Kartal) tüm bölgelerinde profesyonel koltuk ve döşeme yıkama hizmeti sunuyoruz. 
+            Kocaeli&apos;nin (Darıca, Gebze, Çayırova, Dilovası, Körfez) ve İstanbul&apos;un (Tuzla, Pendik, Kartal) tüm bölgelerinde profesyonel koltuk ve döşeme yıkama hizmeti sunuyoruz. 
             Ev, ofis, araç, otel koltuklarının yanı sıra yatak, sandalye ve yastık temizliğinde uzman ekibimizle 
             hizmetinizdeyiz. Antibakteriyel temizlik, leke çıkarma ve aynı gün teslim avantajlarıyla.
           </motion.p>

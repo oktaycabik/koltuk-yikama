@@ -110,7 +110,7 @@ export default function Services() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Hizmet Bölgelerimiz</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Kocaeli ve İstanbul'un birçok ilçesinde profesyonel koltuk yıkama hizmetimizle hizmetinizdeyiz.
+              Kocaeli ve İstanbul&apos;un birçok ilçesinde profesyonel koltuk yıkama hizmetimizle hizmetinizdeyiz.
               Aşağıdaki bölgelerde aynı gün servis imkanı sunuyoruz.
             </p>
           </div>
