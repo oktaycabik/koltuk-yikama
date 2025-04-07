@@ -1,0 +1,21 @@
+{
+  "name": "Kocaeli Halı ve Koltuk Yıkama",
+  "short_name": "Kocaeli Temizlik",
+  "description": "Kocaeli, Darıca ve Gebze bölgesinde profesyonel halı ve koltuk yıkama hizmeti",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
