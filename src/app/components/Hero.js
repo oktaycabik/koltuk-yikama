@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/50 z-10"></div>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('images/hero-bg.png')" }}></div>
       </div>
       
       <div className="container mx-auto px-4 z-10">
@@ -18,7 +18,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
             Kocaeli ve İstanbul&apos;un<br/>
             <span className="text-accent">En İyi Koltuk Yıkama</span> Servisi
@@ -42,13 +42,13 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <a 
-              href="tel:+905551234567" 
+              href="tel:+905533079024" 
               className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-semibold text-lg inline-block text-center"
             >
               Hemen Ara
             </a>
             <a 
-              href="https://wa.me/905551234567" 
+              href="https://wa.me/905533079024" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold text-lg inline-flex items-center justify-center gap-2"

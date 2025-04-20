@@ -39,7 +39,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="neden-biz" className="py-16 bg-white">
+    <section id="ozellikler" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Neden Bizi Tercih Etmelisiniz?</h2>

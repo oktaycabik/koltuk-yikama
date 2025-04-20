@@ -90,7 +90,7 @@ const istanbulRegions = ["Tuzla", "Şifa", "Pendik", "Kartal", "Maltepe", "Ataş
 
 export default function Services() {
   return (
-    <section id="hizmetlerimiz" className="py-16 bg-gray-50">
+    <section id="hizmetler" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Koltuk Yıkama Hizmetlerimiz</h2>

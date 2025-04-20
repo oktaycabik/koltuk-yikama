@@ -23,7 +23,7 @@ export default function WhatsAppButton() {
   
   return (
     <a
-      href="https://wa.me/905551234567?text=Merhaba, koltuk yıkama hizmetleriniz hakkında bilgi almak istiyorum."
+      href="https://wa.me/905533079024?text=Merhaba, koltuk yıkama hizmetleriniz hakkında bilgi almak istiyorum."
       target="_blank"
       rel="noopener noreferrer"
       className={`fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg z-50 transition-all duration-300 ${

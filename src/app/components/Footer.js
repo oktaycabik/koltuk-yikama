@@ -1,125 +1,119 @@
 'use client';
 
-import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaClock, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import Link from 'next/link';
+import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-  
   return (
-    <footer id="iletisim" className="bg-primary text-white pt-12 pb-6">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-          {/* Company Info */}
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Hakkımızda */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Kocaeli ve İstanbul Koltuk Yıkama</h3>
-            <p className="mb-4 text-gray-300">
-              Kocaeli ve İstanbul&apos;un tüm bölgelerinde profesyonel koltuk ve döşeme temizliği hizmetleri. 
-              Ev, ofis, araç ve otel koltuk temizliğinde uzman ekibimizle her zaman yanınızdayız.
+            <h3 className="text-xl font-bold mb-4">Ev & Ofis Koltuk Yıkama</h3>
+            <p className="text-gray-300 mb-4">
+              Kocaeli ve İstanbul bölgesinde profesyonel koltuk yıkama hizmeti sunuyoruz. 
+              Ev, ofis, araç, yatak ve sandalye temizliği konusunda uzman ekibimizle hizmetinizdeyiz.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-accent" aria-label="Facebook">
-                <FaFacebook size={20} />
+              <a
+                href="tel:+905533079024"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <FaPhone />
               </a>
-              <a href="#" className="text-white hover:text-accent" aria-label="Instagram">
-                <FaInstagram size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-accent" aria-label="YouTube">
-                <FaYoutube size={20} />
+              <a
+                href="https://wa.me/905533079024"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <FaWhatsapp />
               </a>
             </div>
           </div>
-          
-          {/* Services */}
+
+          {/* Hizmet Bölgeleri */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Hizmetlerimiz</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#ev-koltuk-yikama" className="text-gray-300 hover:text-white">Ev Koltuk Yıkama</Link>
-              </li>
-              <li>
-                <Link href="#arac-koltuk-yikama" className="text-gray-300 hover:text-white">Araç Koltuk Yıkama</Link>
-              </li>
-              <li>
-                <Link href="#ofis-koltuk-yikama" className="text-gray-300 hover:text-white">Ofis Koltuk Temizliği</Link>
-              </li>
-              <li>
-                <Link href="#yatak-yastik-yikama" className="text-gray-300 hover:text-white">Yatak ve Yastık Yıkama</Link>
-              </li>
-              <li>
-                <Link href="#otel-yikama" className="text-gray-300 hover:text-white">Otel Temizlik Hizmetleri</Link>
-              </li>
-              <li>
-                <Link href="#diger-yikama" className="text-gray-300 hover:text-white">Özel Koltuk Temizliği</Link>
-              </li>
-            </ul>
+            <h3 className="text-xl font-bold mb-4">Hizmet Bölgelerimiz</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <h4 className="font-semibold text-accent mb-2">Kocaeli</h4>
+                <ul className="space-y-1 text-gray-300">
+                  <li>Darıca</li>
+                  <li>Gebze</li>
+                  <li>Çayırova</li>
+                  <li>Dilovası</li>
+                  <li>Şekerpınar</li>
+                  <li>Tavşanlı</li>
+                  <li>Kışladüzü</li>
+                  <li>Körfez</li>
+                  <li>Derince</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-accent mb-2">İstanbul</h4>
+                <ul className="space-y-1 text-gray-300">
+                  <li>Tuzla</li>
+                  <li>Şifa</li>
+                  <li>Pendik</li>
+                  <li>Kartal</li>
+                  <li>Maltepe</li>
+                  <li>Ataşehir</li>
+                  <li>Ümraniye</li>
+                  <li>Sancaktepe</li>
+                  <li>Sultanbeyli</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          
-          {/* Contact Info */}
+
+          {/* İletişim */}
           <div>
-            <h3 className="text-xl font-bold mb-4">İletişim Bilgileri</h3>
+            <h3 className="text-xl font-bold mb-4">İletişim</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="text-accent mr-3 mt-1" />
-                <span>Kocaeli, Darıca Merkez, İstasyon Caddesi No: 123</span>
+              <li className="flex items-center space-x-2 text-gray-300">
+                <FaPhone className="text-accent" />
+                <a href="tel:+905533079024" className="hover:text-white transition-colors">
+                  +90 553 307 90 24
+                </a>
               </li>
-              <li className="flex items-center">
-                <FaPhone className="text-accent mr-3" />
-                <a href="tel:+905551234567" className="hover:text-accent">0555 123 45 67</a>
-              </li>
-              <li className="flex items-center">
-                <FaWhatsapp className="text-accent mr-3" />
-                <a href="https://wa.me/905551234567" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+              <li className="flex items-center space-x-2 text-gray-300">
+                <FaWhatsapp className="text-accent" />
+                <a
+                  href="https://wa.me/905533079024"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   WhatsApp ile İletişim
                 </a>
               </li>
-              <li className="flex items-center">
-                <FaClock className="text-accent mr-3" />
-                <span>Hergün 08:00 - 20:00</span>
+              <li className="flex items-center space-x-2 text-gray-300">
+                <FaMapMarkerAlt className="text-accent" />
+                <span>Kocaeli ve İstanbul</span>
+              </li>
+              <li className="flex items-center space-x-2 text-gray-300">
+                <FaEnvelope className="text-accent" />
+                <a href="mailto:info@evofiskoltukyikama.com" className="hover:text-white transition-colors">
+                  info@evofiskoltukyikama.com
+                </a>
               </li>
             </ul>
           </div>
-          
-          {/* Service Areas */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Hizmet Bölgelerimiz</h3>
-            <div className="grid grid-cols-2 gap-1">
-              <div>
-                <h4 className="font-bold text-accent mb-2">Kocaeli</h4>
-                <ul className="space-y-1">
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Darıca</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Gebze</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Çayırova</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Dilovası</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Şekerpınar</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Tavşanlı</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Kışladüzü</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Körfez</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Derince</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-accent mb-2">İstanbul</h4>
-                <ul className="space-y-1">
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Tuzla</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Şifa</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Pendik</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Kartal</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Maltepe</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Ataşehir</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Ümraniye</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Sancaktepe</Link></li>
-                  <li><Link href="#" className="text-gray-300 hover:text-white">Sultanbeyli</Link></li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
-        
-        <div className="text-center pt-6 border-t border-primary-700">
-          <p>&copy; {currentYear} Kocaeli ve İstanbul Koltuk Yıkama. Tüm hakları saklıdır.</p>
-          <p className="mt-2 text-sm text-gray-400">
-            koltukyikamadetay.com - Profesyonel koltuk yıkama ve temizlik hizmetleri
+
+        {/* Alt Bilgi */}
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Ev & Ofis Koltuk Yıkama. Tüm hakları saklıdır.</p>
+          <p className="mt-2">
+            <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors">
+              Gizlilik Politikası
+            </Link>
+            {' | '}
+            <Link href="/kullanim-kosullari" className="hover:text-white transition-colors">
+              Kullanım Koşulları
+            </Link>
           </p>
         </div>
       </div>

@@ -3,9 +3,15 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaPlus, FaTrash, FaEdit, FaSave, FaTimes, FaSignOutAlt } from 'react-icons/fa';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy } from 'firebase/firestore';
 
 export default function AdminPanel() {
   const [customers, setCustomers] = useState([]);
+  const [filteredCustomers, setFilteredCustomers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('date');
+  const [sortOrder, setSortOrder] = useState('desc');
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [editingCustomerId, setEditingCustomerId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -36,13 +42,53 @@ export default function AdminPanel() {
     checkAuth();
   }, [router]);
 
-  // Local Storage'dan müşteri verilerini yükle
+  // Firestore'dan müşteri verilerini çek
   useEffect(() => {
-    const savedCustomers = localStorage.getItem('customers');
-    if (savedCustomers) {
-      setCustomers(JSON.parse(savedCustomers));
-    }
+    const q = query(collection(db, 'customers'), orderBy('createdAt', 'desc'));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const customersData = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setCustomers(customersData);
+      setFilteredCustomers(customersData);
+    });
+
+    return () => unsubscribe();
   }, []);
+
+  // Arama ve sıralama işlemleri
+  useEffect(() => {
+    let result = [...customers];
+
+    // Arama işlemi
+    if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
+      result = result.filter(customer => 
+        customer.fullName.toLowerCase().includes(searchLower) ||
+        customer.service.toLowerCase().includes(searchLower) ||
+        customer.district.toLowerCase().includes(searchLower) ||
+        customer.phone.includes(searchTerm)
+      );
+    }
+
+    // Sıralama işlemi
+    result.sort((a, b) => {
+      if (sortBy === 'date') {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+      } else {
+        const valueA = a[sortBy].toLowerCase();
+        const valueB = b[sortBy].toLowerCase();
+        return sortOrder === 'asc' 
+          ? valueA.localeCompare(valueB)
+          : valueB.localeCompare(valueA);
+      }
+    });
+
+    setFilteredCustomers(result);
+  }, [customers, searchTerm, sortBy, sortOrder]);
 
   // Müşteri verilerini Local Storage'a kaydet
   useEffect(() => {
@@ -81,60 +127,68 @@ export default function AdminPanel() {
   // Form veri değişikliği
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   // Müşteri ekle veya güncelle
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Bugünün tarihini ve saatini otomatik olarak ekle eğer boşsa
-    const currentDate = new Date();
-    const formattedDate = formData.date || currentDate.toISOString().split('T')[0];
-    const formattedTime = formData.time || 
-      `${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}`;
-    
-    const customerData = {
-      ...formData,
-      date: formattedDate,
-      time: formattedTime,
-      id: editingCustomerId || Date.now().toString()
-    };
-
-    if (editingCustomerId) {
-      // Müşteri güncelleme
-      setCustomers(customers.map(customer => 
-        customer.id === editingCustomerId ? customerData : customer
-      ));
-    } else {
-      // Yeni müşteri ekleme
-      setCustomers([...customers, customerData]);
+    try {
+      if (editingCustomerId) {
+        // Müşteri güncelle
+        const customerRef = doc(db, 'customers', editingCustomerId);
+        await updateDoc(customerRef, formData);
+        alert('Müşteri başarıyla güncellendi!');
+      } else {
+        // Yeni müşteri ekle
+        const newCustomer = {
+          ...formData,
+          createdAt: new Date().toISOString()
+        };
+        await addDoc(collection(db, 'customers'), newCustomer);
+        alert('Müşteri başarıyla eklendi!');
+      }
+      resetFormData();
+    } catch (error) {
+      console.error('Hata:', error);
+      alert('İşlem sırasında bir hata oluştu!');
     }
-
-    resetFormData();
-    setIsFormVisible(false);
   };
 
   // Müşteri düzenleme
   const handleEdit = (customer) => {
-    setFormData({
-      date: customer.date,
-      time: customer.time,
-      fullName: customer.fullName,
-      service: customer.service,
-      district: customer.district,
-      address: customer.address,
-      phone: customer.phone,
-      notes: customer.notes
-    });
+    setFormData(customer);
     setEditingCustomerId(customer.id);
     setIsFormVisible(true);
   };
 
   // Müşteri silme
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm('Bu müşteriyi silmek istediğinizden emin misiniz?')) {
-      setCustomers(customers.filter(customer => customer.id !== id));
+      try {
+        await deleteDoc(doc(db, 'customers', id));
+        alert('Müşteri başarıyla silindi!');
+      } catch (error) {
+        console.error('Silme hatası:', error);
+        alert('Silme sırasında bir hata oluştu!');
+      }
+    }
+  };
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSort = (field) => {
+    if (sortBy === field) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortBy(field);
+      setSortOrder('asc');
     }
   };
 
@@ -147,8 +201,47 @@ export default function AdminPanel() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gray-100 py-8">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold text-primary mb-8">Müşteri Yönetim Paneli</h1>
+        
+        {/* Arama ve Sıralama */}
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Arama</label>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={handleSearch}
+                placeholder="Müşteri adı, hizmet, ilçe veya telefon ile arama yapın..."
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Sıralama</label>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+              >
+                <option value="date">Tarih</option>
+                <option value="fullName">Ad Soyad</option>
+                <option value="service">Hizmet</option>
+                <option value="district">İlçe</option>
+              </select>
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <button
+              onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            >
+              {sortOrder === 'asc' ? 'Artan' : 'Azalan'} Sıralama
+            </button>
+          </div>
+        </div>
+
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold text-primary">Müşteri Yönetim Paneli</h1>
           <div className="flex space-x-4">
@@ -303,29 +396,48 @@ export default function AdminPanel() {
         )}
 
         {/* Müşteri Tablosu */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full">
-              <thead className="bg-primary text-white">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Tarih/Saat</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Müşteri</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Hizmet</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">İlçe/Adres</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Telefon</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Not</th>
-                  <th className="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider">İşlemler</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {customers.length === 0 ? (
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-semibold mb-4">Müşteri Listesi</h2>
+          
+          {filteredCustomers.length === 0 ? (
+            <p className="text-gray-500 text-center py-4">
+              {searchTerm ? 'Arama kriterlerine uygun müşteri bulunamadı.' : 'Henüz müşteri kaydı bulunmamaktadır.'}
+            </p>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
                   <tr>
-                    <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
-                      Henüz müşteri kaydı bulunmuyor.
-                    </td>
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                      onClick={() => handleSort('date')}
+                    >
+                      Tarih/Saat {sortBy === 'date' && (sortOrder === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                      onClick={() => handleSort('fullName')}
+                    >
+                      Ad Soyad {sortBy === 'fullName' && (sortOrder === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                      onClick={() => handleSort('service')}
+                    >
+                      Hizmet {sortBy === 'service' && (sortOrder === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                      onClick={() => handleSort('district')}
+                    >
+                      İlçe {sortBy === 'district' && (sortOrder === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Telefon</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">İşlemler</th>
                   </tr>
-                ) : (
-                  customers.map((customer) => (
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {filteredCustomers.map((customer) => (
                     <tr key={customer.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">{customer.date}</div>
@@ -364,11 +476,11 @@ export default function AdminPanel() {
                         </div>
                       </td>
                     </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
-          </div>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </div>
     </div>

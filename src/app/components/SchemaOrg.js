@@ -4,159 +4,160 @@ export default function SchemaOrg() {
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Kocaeli ve İstanbul Koltuk Yıkama",
-          "image": "https://koltukyikamadetay.com/images/logo.png",
-          "url": "https://koltukyikamadetay.com",
-          "telephone": "+905551234567",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "İstasyon Caddesi No: 123",
-            "addressLocality": "Darıca",
-            "addressRegion": "Kocaeli",
-            "postalCode": "41700",
-            "addressCountry": "TR"
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: 'Ev & Ofis Koltuk Yıkama',
+          image: '/hero-bg.png',
+          description: 'Kocaeli ve İstanbul bölgesinde profesyonel koltuk yıkama hizmeti. Araç, ofis, nubuk koltuk, yatak ve yastık yıkama. Otel temizlik hizmetleri.',
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: 'Kocaeli ve İstanbul',
+            addressCountry: 'TR'
           },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 40.7736,
-            "longitude": 29.3922
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 40.776676,
+            longitude: 29.430457
           },
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-              "Sunday"
+          url: 'https://evofiskoltukyikama.com',
+          telephone: '+905533079024',
+          priceRange: '₺₺',
+          openingHoursSpecification: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday'
             ],
-            "opens": "08:00",
-            "closes": "20:00"
+            opens: '08:00',
+            closes: '20:00'
           },
-          "sameAs": [
-            "https://www.facebook.com/koltukyikamadetay",
-            "https://www.instagram.com/koltukyikamadetay"
+          sameAs: [
+            'https://wa.me/905533079024'
           ],
-          "priceRange": "$$",
-          "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": 40.7736,
-              "longitude": 29.3922
-            },
-            "geoRadius": 50000
-          },
-          "areaServed": [
-            "Darıca", "Gebze", "Çayırova", "Dilovası", "Şekerpınar", "Tavşanlı", 
-            "Kışladüzü", "Körfez", "Derince", "Tuzla", "Şifa", "Pendik", 
-            "Kartal", "Maltepe", "Ataşehir", "Ümraniye", "Sancaktepe", "Sultanbeyli"
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Koltuk Yıkama Hizmetleri",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Ev Koltuk Yıkama",
-                  "description": "Evinizin konforunu sağlayan koltuklarınız için profesyonel temizlik hizmeti. Kumaş ve deri koltuklar için özel çözümler."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Araç Koltuk Yıkama",
-                  "description": "Aracınızın iç temizliği için profesyonel çözümler. Koltuk, tavan, döşeme ve bagaj temizliği."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Ofis Koltuk Yıkama",
-                  "description": "Çalışma ortamınızın temizliği için profesyonel koltuk ve sandalye yıkama hizmeti."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Yatak ve Yastık Yıkama",
-                  "description": "Sağlıklı bir uyku için temiz yatak ve yastıklar. Akar ve bakteri giderme."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Otel Temizlik Hizmetleri",
-                  "description": "Otelcilik sektörüne özel temizlik çözümleri. Oda koltukları, yataklar, ortak alan mobilyaları."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Özel Koltuk Temizliği",
-                  "description": "Nubuk, süet, kadife gibi özel kumaşlar ve deri koltuklarınız için profesyonel temizlik hizmetleri."
-                }
-              }
-            ]
-          },
-          "review": [
+          areaServed: [
             {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Ahmet Yılmaz"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Gebze'deki evimizin koltuklarını yıkattık. Kocaeli Koltuk Yıkama ekibi harika bir iş çıkardı, koltuklarımız neredeyse yeni gibi oldu. Çok teşekkürler!"
+              '@type': 'City',
+              name: 'Darıca'
             },
             {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Ayşe Demir"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Tuzla'da aracımın koltuklarını temizlettirdim, sonuç mükemmel oldu. Hem hızlı hem de profesyonel bir hizmet. Kesinlikle tavsiye ederim."
+              '@type': 'City',
+              name: 'Gebze'
             },
             {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Mehmet Kaya"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Pendik'teki ofisimizin tüm koltuklarını temizlettik. Profesyonel ve titiz çalışmaları için teşekkür ederiz. Tekrar tercih edeceğiz."
+              '@type': 'City',
+              name: 'Çayırova'
+            },
+            {
+              '@type': 'City',
+              name: 'Dilovası'
+            },
+            {
+              '@type': 'City',
+              name: 'Şekerpınar'
+            },
+            {
+              '@type': 'City',
+              name: 'Tavşanlı'
+            },
+            {
+              '@type': 'City',
+              name: 'Kışladüzü'
+            },
+            {
+              '@type': 'City',
+              name: 'Körfez'
+            },
+            {
+              '@type': 'City',
+              name: 'Derince'
+            },
+            {
+              '@type': 'City',
+              name: 'Tuzla'
+            },
+            {
+              '@type': 'City',
+              name: 'Şifa'
+            },
+            {
+              '@type': 'City',
+              name: 'Pendik'
+            },
+            {
+              '@type': 'City',
+              name: 'Kartal'
+            },
+            {
+              '@type': 'City',
+              name: 'Maltepe'
+            },
+            {
+              '@type': 'City',
+              name: 'Ataşehir'
+            },
+            {
+              '@type': 'City',
+              name: 'Ümraniye'
+            },
+            {
+              '@type': 'City',
+              name: 'Sancaktepe'
+            },
+            {
+              '@type': 'City',
+              name: 'Sultanbeyli'
             }
           ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "156"
-          }
-        }),
+          makesOffer: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Ev Koltuk Yıkama'
+              }
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Araç Koltuk Yıkama'
+              }
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Ofis Koltuk Yıkama'
+              }
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Yatak ve Yastık Yıkama'
+              }
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Otel Temizlik Hizmetleri'
+              }
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Özel Koltuk Temizliği'
+              }
+            }
+          ]
+        })
       }}
     />
   );
