@@ -75,7 +75,7 @@ export default function Contact() {
             
             <div className="mt-8">
               <a 
-                href="tel:+905551234567" 
+                href="tel:+905533079024" 
                 className="inline bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full text-center"
               >
                 Hemen Arayın

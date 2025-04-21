@@ -12,7 +12,7 @@ const testimonials = [
     occupation: "Ev Sahibi",
     image: "/images/testimonial1.jpg", 
     rating: 5,
-    text: "Üç kişilik koltuk takımımız 8 yıllık ve oldukça kirlenmişti. Kocaeli Koltuk Yıkama'dan aldığımız hizmet sonrası koltuklarımız adeta yeni gibi oldu. Özellikle çocuklarımın döktüğü meyve suyu lekeleri tamamen çıkarıldı. Profesyonel ekip ve uygun fiyat için teşekkürler!"
+    text: "Üç kişilik koltuk takımımız 8 yıllık ve oldukça kirlenmişti. Ev & Ofis Koltuk Yıkama'dan aldığımız hizmet sonrası koltuklarımız adeta yeni gibi oldu. Özellikle çocuklarımın döktüğü meyve suyu lekeleri tamamen çıkarıldı. Profesyonel ekip ve uygun fiyat için teşekkürler!"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const testimonials = [
     occupation: "İşletme Sahibi",
     image: "/images/testimonial2.jpg",
     rating: 5,
-    text: "Kafe işletmecisi olarak oturma gruplarımızın temizliği müşterilerimiz için çok önemli. Düzenli olarak Kocaeli Koltuk Yıkama hizmetinden yararlanıyoruz. Her temizlik sonrası mekanımız daha ferah ve hijyenik oluyor. İşletme sahiplerine kesinlikle tavsiye ederim."
+    text: "Kafe işletmecisi olarak oturma gruplarımızın temizliği müşterilerimiz için çok önemli. Düzenli olarak Ev & Ofis Koltuk Yıkama hizmetinden yararlanıyoruz. Her temizlik sonrası mekanımız daha ferah ve hijyenik oluyor. İşletme sahiplerine kesinlikle tavsiye ederim."
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const testimonials = [
     occupation: "Araç Sahibi",
     image: "/images/testimonial3.jpg",
     rating: 5,
-    text: "İkinci el araç aldığımda koltukları oldukça kötü durumdaydı. Araç koltuklarını temizletmek için birçok yer araştırdım ve Kocaeli Koltuk Yıkama'yı tercih ettim. Sonuç inanılmazdı! Koltuklar, tavan döşemesi ve bagaj yepyeni gibi oldu. Kesinlikle tavsiye ediyorum."
+    text: "İkinci el araç aldığımda koltukları oldukça kötü durumdaydı. Araç koltuklarını temizletmek için birçok yer araştırdım ve Ev & Ofis Koltuk Yıkama'yı tercih ettim. Sonuç inanılmazdı! Koltuklar, tavan döşemesi ve bagaj yepyeni gibi oldu. Kesinlikle tavsiye ediyorum."
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const testimonials = [
     occupation: "Otel Müdürü",
     image: "/images/testimonial4.jpg",
     rating: 5,
-    text: "Otelimizin lobi koltuklarını ve oda yataklarını düzenli olarak Kocaeli Koltuk Yıkama firmasına temizletiyoruz. Sundukları toplu hizmet paketi sayesinde maliyetlerimizi düşürürken, hijyen standartlarımızı yükselttik. Müşterilerimizden çok olumlu geri dönüşler alıyoruz."
+    text: "Otelimizin lobi koltuklarını ve oda yataklarını düzenli olarak Ev & Ofis Koltuk Yıkama firmasına temizletiyoruz. Sundukları toplu hizmet paketi sayesinde maliyetlerimizi düşürürken, hijyen standartlarımızı yükselttik. Müşterilerimizden çok olumlu geri dönüşler alıyoruz."
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const testimonials = [
     occupation: "Ofis Yöneticisi",
     image: "/images/testimonial5.jpg",
     rating: 4,
-    text: "Şirketimizin tüm ofis koltuklarını ve toplantı salonu sandalyelerini Kocaeli Koltuk Yıkama'ya temizlettik. Hızlı ve profesyonel hizmetleri sayesinde iş akışımız aksamadı. Çalışanlarımız temiz ve ferah bir ortamda çalışmaktan çok memnun."
+    text: "Şirketimizin tüm ofis koltuklarını ve toplantı salonu sandalyelerini Ev & Ofis Koltuk Yıkama'ya temizlettik. Hızlı ve profesyonel hizmetleri sayesinde iş akışımız aksamadı. Çalışanlarımız temiz ve ferah bir ortamda çalışmaktan çok memnun."
   }
 ];
 

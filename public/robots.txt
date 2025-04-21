@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://kocaelitemizlik.com/sitemap.xml 
+Sitemap: https://evofiskoltukyikama.com/sitemap.xml 
