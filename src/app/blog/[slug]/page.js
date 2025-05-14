@@ -118,7 +118,7 @@ const blogPosts = {
     `
   },
   'gebze-darica-koltuk-yikama-hizmeti': {
-    title: 'Gebze ve Darıca\'da Koltuk Yıkama Hizmeti Alırken Nelere Dikkat Etmelisiniz?',
+    title: 'Gebze ve Darıca&apos;da Koltuk Yıkama Hizmeti Alırken Nelere Dikkat Etmelisiniz?',
     date: '',
     category: 'Koltuk Bakımı',
     image: '/images/gebze-darica-koltuk-yikama.png',
@@ -132,7 +132,7 @@ const blogPosts = {
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h2 class="text-2xl font-bold text-primary mb-4">1. Gebze ve Darıca'da Koltuk Temizliği Neden Daha Sık Yapılmalı?</h2>
+          <h2 class="text-2xl font-bold text-primary mb-4">1. Gebze ve Darıca&apos;da Koltuk Temizliği Neden Daha Sık Yapılmalı?</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
             Gebze ve Darıca, sanayi tesislerine ve iş merkezlerine yakınlıklarıyla bilinen bölgeler. Bu durum, havadaki toz ve kirlilik oranını artırır. Ayrıca bölgede yaşayan ailelerin büyük çoğunluğu apartman dairelerinde yaşadığı için koltuklar ev içinde yoğun kullanılır.
           </p>
@@ -153,13 +153,13 @@ const blogPosts = {
         <div class="bg-white p-6 rounded-lg shadow-sm">
           <h2 class="text-2xl font-bold text-primary mb-4">2. Profesyonel Koltuk Yıkama Firması Seçerken Nelere Dikkat Etmelisiniz?</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Gebze ve Darıca'da birçok temizlik firması hizmet veriyor. Ancak kaliteli ve güvenilir bir seçim yapmak için aşağıdaki kriterleri göz önünde bulundurmalısınız:
+            Gebze ve Darıca&apos;da birçok temizlik firması hizmet veriyor. Ancak kaliteli ve güvenilir bir seçim yapmak için aşağıdaki kriterleri göz önünde bulundurmalısınız:
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✅</span>
               <span class="text-gray-600">
-                <strong class="text-gray-900">Yerel referansları olan firmalar:</strong> Daha önce Gebze veya Darıca'da hizmet vermiş, müşteri memnuniyeti yüksek olan firmaları tercih edin.
+                <strong class="text-gray-900">Yerel referansları olan firmalar:</strong> Daha önce Gebze veya Darıca&apos;da hizmet vermiş, müşteri memnuniyeti yüksek olan firmaları tercih edin.
               </span>
             </li>
             <li class="flex items-start">
@@ -184,7 +184,7 @@ const blogPosts = {
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h2 class="text-2xl font-bold text-primary mb-4">3. Gebze ve Darıca'da Koltuk Yıkama Hizmeti Almanın Avantajları</h2>
+          <h2 class="text-2xl font-bold text-primary mb-4">3. Gebze ve Darıca&apos;da Koltuk Yıkama Hizmeti Almanın Avantajları</h2>
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-green-500 mr-2">✅</span>

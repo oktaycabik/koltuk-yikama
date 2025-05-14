@@ -23,7 +23,7 @@ export default function Home() {
             <div className="max-w-4xl mx-auto">
               <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-8 rounded-2xl shadow-lg">
                 <h2 className="text-3xl font-bold text-primary mb-6 text-center">
-                  Gebze ve Darıca'da Profesyonel Koltuk Yıkama Hizmeti
+                  Gebze ve Darıca&apos;da Profesyonel Koltuk Yıkama Hizmeti
                 </h2>
                 <div className="prose prose-lg max-w-none">
                   <p className="text-gray-700 leading-relaxed mb-6">
