@@ -41,7 +41,7 @@ const blogPosts = {
         <div class="bg-white p-6 rounded-lg shadow-sm">
           <h2 class="text-2xl font-bold text-primary mb-4">2. Yüzey Temizliği vs Derin Temizlik</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Evde yapılan temizlik genellikle "görünür kiri" ortadan kaldırır. Ancak koltukların içinde, kumaşın alt katmanlarında biriken toz akarları, bakteriler ve kötü kokular bu yöntemlerle yok edilemez.
+            Evde yapılan temizlik genellikle &quot;görünür kiri&quot; ortadan kaldırır. Ancak koltukların içinde, kumaşın alt katmanlarında biriken toz akarları, bakteriler ve kötü kokular bu yöntemlerle yok edilemez.
           </p>
           <p class="text-gray-600 leading-relaxed">
             Profesyonel koltuk yıkama hizmetleri ise güçlü vakum makineleri, özel koltuk şampuanları ve yüksek basınçlı buhar sistemleri ile koltuğun derinliklerine kadar inerek mikroskobik seviyede hijyen sağlar.
