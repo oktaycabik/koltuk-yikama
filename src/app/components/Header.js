@@ -40,6 +40,9 @@ export default function Header() {
             <Link href="/#ozellikler" className="text-gray-700 hover:text-accent transition-colors">
               Özellikler
             </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-accent transition-colors">
+              Blog
+            </Link>
             <Link href="/#sss" className="text-gray-700 hover:text-accent transition-colors">
               S.S.S
             </Link>
@@ -89,6 +92,9 @@ export default function Header() {
               </Link>
               <Link href="/#ozellikler" className="text-gray-700 hover:text-accent transition-colors">
                 Özellikler
+              </Link>
+              <Link href="/blog" className="text-gray-700 hover:text-accent transition-colors">
+                Blog
               </Link>
               <Link href="/#sss" className="text-gray-700 hover:text-accent transition-colors">
                 S.S.S
