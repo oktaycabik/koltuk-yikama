@@ -218,15 +218,15 @@ const blogPosts = {
           <div class="space-y-4">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">➡ Gebze&apos;de en iyi koltuk yıkama firması hangisi?</h3>
-              <p class="text-gray-600">Tavsiye edilen firmalar genellikle müşteri yorumlarıyla öne çıkar. Google yorumları ve sosyal medya sayfaları bu konuda fikir verir.</p>
+              <p className="text-gray-600">Tavsiye edilen firmalar genellikle müşteri yorumlarıyla öne çıkar. Google yorumları ve sosyal medya sayfaları bu konuda fikir verir.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">➡ Darıca&apos;da yerinde koltuk yıkama yapılıyor mu?</h3>
-              <p class="text-gray-600">Evet, Darıca&apos;daki birçok firma yerinde hizmet sunmaktadır. Randevu sistemiyle çalışırlar.</p>
+              <p className="text-gray-600">Evet, Darıca&apos;daki birçok firma yerinde hizmet sunmaktadır. Randevu sistemiyle çalışırlar.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">➡ Kuruma süresi ne kadar sürüyor?</h3>
-              <p class="text-gray-600">Hava koşullarına bağlı olarak 4 ila 8 saat arasında değişmektedir. Sanayi tipi vakum makineleri kullanıldığında bu süre kısalır.</p>
+              <p className="text-gray-600">Hava koşullarına bağlı olarak 4 ila 8 saat arasında değişmektedir. Sanayi tipi vakum makineleri kullanıldığında bu süre kısalır.</p>
             </div>
           </div>
         </div>
