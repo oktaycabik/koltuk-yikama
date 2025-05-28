@@ -44,7 +44,7 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
-                    Gebze ve Darıca'da koltuk yıkama hizmeti almak isteyen müşterilerimiz için, hafta içi ve hafta sonu randevu seçenekleri sunuyoruz. Ücretsiz keşif hizmetimizle, koltuklarınızın durumunu inceleyip size en uygun temizlik yöntemini öneriyoruz. Müşteri memnuniyetini ön planda tutan anlayışımızla, hizmet sonrası destek garantisi veriyoruz.
+                    Gebze ve Darıca&apos;da koltuk yıkama hizmeti almak isteyen müşterilerimiz için, hafta içi ve hafta sonu randevu seçenekleri sunuyoruz. Ücretsiz keşif hizmetimizle, koltuklarınızın durumunu inceleyip size en uygun temizlik yöntemini öneriyoruz. Müşteri memnuniyetini ön planda tutan anlayışımızla, hizmet sonrası destek garantisi veriyoruz.
                   </p>
                 </div>
               </div>

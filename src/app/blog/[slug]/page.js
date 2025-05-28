@@ -217,15 +217,15 @@ const blogPosts = {
           <h2 class="text-2xl font-bold text-primary mb-4">4. Sıkça Sorulan Sorular</h2>
           <div class="space-y-4">
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">➡ Gebze'de en iyi koltuk yıkama firması hangisi?</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">➡ Gebze&apos;de en iyi koltuk yıkama firması hangisi?</h3>
               <p class="text-gray-600">Tavsiye edilen firmalar genellikle müşteri yorumlarıyla öne çıkar. Google yorumları ve sosyal medya sayfaları bu konuda fikir verir.</p>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">➡ Darıca'da yerinde koltuk yıkama yapılıyor mu?</h3>
-              <p class="text-gray-600">Evet, Darıca'daki birçok firma yerinde hizmet sunmaktadır. Randevu sistemiyle çalışırlar.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">➡ Darıca&apos;da yerinde koltuk yıkama yapılıyor mu?</h3>
+              <p class="text-gray-600">Evet, Darıca&apos;daki birçok firma yerinde hizmet sunmaktadır. Randevu sistemiyle çalışırlar.</p>
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">➡ Kuruma süresi ne kadar sürüyor?</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">➡ Kuruma süresi ne kadar sürüyor?</h3>
               <p class="text-gray-600">Hava koşullarına bağlı olarak 4 ila 8 saat arasında değişmektedir. Sanayi tipi vakum makineleri kullanıldığında bu süre kısalır.</p>
             </div>
           </div>
@@ -234,10 +234,10 @@ const blogPosts = {
         <div class="bg-gray-50 p-6 rounded-lg">
           <h2 class="text-2xl font-bold text-primary mb-4">Sonuç: Sağlıklı Bir Ev İçin Doğru Hizmeti Seçin</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Gebze ve Darıca'da yaşayanlar için koltuk temizliği, sadece estetik değil aynı zamanda sağlık açısından da büyük önem taşır. Yaşadığınız çevrenin koşulları, evdeki bireylerin ihtiyaçları ve koltuklarınızın durumu göz önüne alındığında, yılda birkaç kez profesyonel destek almak en doğru seçim olacaktır.
+            Gebze ve Darıca&apos;da yaşayanlar için koltuk temizliği, sadece estetik değil aynı zamanda sağlık açısından da büyük önem taşır. Yaşadığınız çevrenin koşulları, evdeki bireylerin ihtiyaçları ve koltuklarınızın durumu göz önüne alındığında, yılda birkaç kez profesyonel destek almak en doğru seçim olacaktır.
           </p>
           <p class="text-gray-600 leading-relaxed">
-            Eğer siz de Gebze veya Darıca'da koltuk yıkama hizmeti arıyorsanız, hem fiyat-performans dengesine hem de müşteri memnuniyetine dikkat ederek karar vermelisiniz.
+            Eğer siz de Gebze veya Darıca&apos;da koltuk yıkama hizmeti arıyorsanız, hem fiyat-performans dengesine hem de müşteri memnuniyetine dikkat ederek karar vermelisiniz.
           </p>
         </div>
       </div>
